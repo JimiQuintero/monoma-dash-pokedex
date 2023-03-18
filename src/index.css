@@ -2,25 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
+:root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
-  background: url(../src/assets/fondo.png), #7b4397;
-  background: url(../src/assets/fondo.png),
-    -webkit-gradient(linear, right top, left top, from(#7b4397), to(#dc2430));
-  background: url(../src/assets/fondo.png),
-    linear-gradient(to left, #7b4397, #dc2430);
 }
 
 body {
   margin: 0;
   box-sizing: border-box;
   display: flex;
-  place-items: center;
+  /* flex-direction: column; */
+  /* place-items: center; */
   width: 100%;
   min-height: 100vh;
-} */
+}
