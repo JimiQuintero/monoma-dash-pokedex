@@ -1,11 +1,14 @@
 import React from "react";
+import PokemonProvaider from "../context/PokemonProvaider";
 import AppRoutes from "../routes/AppRoutes";
 //import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <AppRoutes />
+      <PokemonProvaider>
+        <AppRoutes />
+      </PokemonProvaider>
     </div>
   );
 }

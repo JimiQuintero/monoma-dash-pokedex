@@ -1,8 +1,4 @@
 {
-  "usuario": [
-    {
-      "email": "test.monoma@mail.com",
-      "password": "12345678"
-    }
-  ]
+  "email": "test.monoma@mail.com",
+  "password": "12345678"
 }

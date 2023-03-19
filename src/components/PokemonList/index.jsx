@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import PokemonContext from "../../context/PokemonContext";
 import PokemonCard from "../PokemonCard";
 import "./PokemonList.css";
 
-function PokemonList({ pokemons }) {
+function PokemonList() {
+  const { pokemons } = useContext(PokemonContext);
   return (
     <>
       <h1 className="text-center text-3xl font-semibold mt-12">
