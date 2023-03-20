@@ -1,0 +1,9 @@
+.contenedor {
+  box-sizing: border-box;
+  width: 1349.4px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ddd6fe;
+}

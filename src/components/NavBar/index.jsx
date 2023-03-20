@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../App/App.css";
 import logo from "../../assets/logo.png";
 
@@ -29,7 +30,9 @@ function NavBar() {
                 <a>Settings</a>
               </li>
               <li>
-                <a>Logout</a>
+                <Link replace to={"/login"}>
+                  Logout
+                </Link>
               </li>
             </ul>
           </div>

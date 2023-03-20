@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PokemonContext from "./PokemonContext";
-import userData from "../helpers/userData.json";
+import users from "../helpers/userData.json";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -44,9 +44,9 @@ const PokemonProvaider = ({ children }) => {
     localStorage.setItem("password", password);
     setLoading(true);
     //Lógica para validar el usuario
-    const usuario = userData;
+    const user = users;
 
-    if (usuario.email === email && usuario.password === password) {
+    if (user.email === email && user.password === password) {
       setLoading(false);
       Swal.fire("Exito", "Usuario validado correctamente", "success");
       navigate("/home");
@@ -86,7 +86,7 @@ const PokemonProvaider = ({ children }) => {
               return {
                 id: response.data.id,
                 name: response.data.name,
-                image: response.data.sprites.front_default,
+                image: response.data.sprites.other.dream_world.front_default,
                 weight: response.data.weight,
                 moves: response.data.moves,
               };
@@ -106,7 +106,7 @@ const PokemonProvaider = ({ children }) => {
   }, []);
 
   //Peticion para Consultar en la API todos los pokemones
-  const getAllPokemons = async () => {
+  /* const getAllPokemons = async () => {
     const baseURL = "https://pokeapi.co/api/v2/";
     await axios
       .get(`${baseURL}pokemon?limit=100000&offset=0`)
@@ -119,17 +119,9 @@ const PokemonProvaider = ({ children }) => {
         }
       })
       .catch((err) => console.log(err));
-  };
-
-  //Petición para Consultar Pokemon po ID
-  /*  const getPokemonsByID = async (id) => {
-    const baseURL = "https://pokeapi.co/api/v2/";
-    await axios
-      .get(`${baseURL}pokemon/${id}`)
-      .then((response) => response.data.reaults)
-      .catch((err) => console.log(err));
   }; */
 
+  //Petición para Consultar Pokemon po ID
   const getPokemonByID = async (id) => {
     const baseURL = "https://pokeapi.co/api/v2/";
 
@@ -142,9 +134,9 @@ const PokemonProvaider = ({ children }) => {
     loadData();
   }, []);
 
-  useEffect(() => {
+  /* useEffect(() => {
     getAllPokemons();
-  }, []);
+  }, []); */
 
   return (
     <PokemonContext.Provider
